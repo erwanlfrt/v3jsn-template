@@ -1,15 +1,37 @@
-<script setup lang=ts>
-import MyTile from '@/components/tile'
-const props = defineProps<{ messages: string[], title: string }>()
+<script setup lang="ts">
+import MyTile from '@/components/tile';
+import { Configuration } from 'vue-js-spatial-navigation';
+
+const props = defineProps<{
+  messages: string[];
+  title: string;
+  conf: Configuration;
+  snId: string;
+}>();
+
+// const $spatialNavigation: SpatialNavigation = inject(
+//   '$SpatialNavigation'
+// ) as SpatialNavigation;
+
+// onMounted(() => {
+//   $spatialNavigation.set(props.snId, props.conf);
+// });
 </script>
 <template>
-<div className="strip-wrapper">
-  <h1>{{ title }}</h1>
-  <div className="strip">
-    <my-tile v-for="(message, index) in props.messages"  :key="index" :message="message"/>
+  <div className="strip-wrapper">
+    <h1>{{ title }}</h1>
+    <div
+      className="strip"
+      v-focus-section="{ id: props.snId, conf: props.conf }"
+    >
+      <my-tile
+        v-for="(message, index) in props.messages"
+        :key="index"
+        :message="message"
+        :className="'tile ' + (index === 4 ? 'default-tile' : '')"
+      />
+    </div>
   </div>
-</div>
-
 </template>
 
 <style lang="scss">

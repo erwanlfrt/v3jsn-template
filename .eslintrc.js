@@ -16,10 +16,14 @@ module.exports = {
     ecmaVersion: 2020
   },
   rules: {
+    'prettier/prettier': [
+      'error',
+      { singleQuote: true, trailingComma: 'none', maxWidth: 200 }
+    ],
     'max-len': [
       1,
       {
-        code: 200,
+        code: 300,
         tabWidth: 2
       }
     ],
@@ -35,8 +39,7 @@ module.exports = {
     'no-useless-constructor': 'off',
     '@typescript-eslint/no-useless-constructor': 'error',
     'no-unused-vars': 'off',
-    '@typescript-eslint/no-unused-vars': 'error',
-    'prettier/prettier': 'warn'
+    '@typescript-eslint/no-unused-vars': 'error'
   },
   overrides: [
     {
@@ -50,4 +53,4 @@ module.exports = {
       }
     }
   ]
-}
+};

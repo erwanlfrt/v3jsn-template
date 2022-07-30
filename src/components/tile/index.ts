@@ -1,2 +1,2 @@
-import MyTile from './MyTile.vue'
-export default MyTile
+import MyTile from './MyTile.vue';
+export default MyTile;

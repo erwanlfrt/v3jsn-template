@@ -1,2 +1,2 @@
-import MyStrip from './MyStrip.vue'
-export default MyStrip
+import MyStrip from './MyStrip.vue';
+export default MyStrip;
