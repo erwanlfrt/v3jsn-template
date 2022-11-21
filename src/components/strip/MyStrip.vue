@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import MyTile from '@/components/tile';
-import { Configuration } from 'vue-js-spatial-navigation';
+import { Configuration } from 'boussole';
 
 const props = defineProps<{
   messages: string[];

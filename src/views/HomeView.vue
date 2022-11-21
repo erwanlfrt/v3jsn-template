@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import MyStrip from '@/components/strip';
 import { ref } from 'vue';
-import { Configuration, SpatialNavigation } from 'vue-js-spatial-navigation';
+import { Configuration } from 'boussole';
 
 const messages: string[] = [];
 for (let i = 0; i < 6; i++) {
@@ -50,7 +50,6 @@ const conf4: Configuration = {
 
 const onClick = () => {
   console.log('been clicked');
-  SpatialNavigation.getInstance().focusOnMounted('parent');
   window.setTimeout(() => {
     showButton.value = true;
   }, 2000);
